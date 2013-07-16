@@ -1,8 +1,9 @@
 Readit::Application.routes.draw do
   devise_for :users
 
-  resources :links
-
+  resources :links do
+    resources :comments
+  end
   resources :pages
   root to: "pages#index"
 
